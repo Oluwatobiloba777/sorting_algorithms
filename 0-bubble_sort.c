@@ -5,7 +5,7 @@
  * @array:array pointer
  * @size:size of the array
  *
- * Return:ir returns null Void
+ * Return: Null Void
  */
  void bubble_sort(int *array, size_t size)
 {

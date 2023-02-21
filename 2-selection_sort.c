@@ -5,7 +5,7 @@
   * @array: array pointer
   * @size: size of the list
   *
-  * Return: it returns null
+  * Return: Null
   */
 void selection_sort(int *array, size_t size)
 {
