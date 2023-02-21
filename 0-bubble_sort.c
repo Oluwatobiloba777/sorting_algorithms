@@ -11,7 +11,15 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t i, j, k;
 
+<<<<<<< HEAD
 	for (i = 0; i < size; i++)
+=======
+
+	for (i = 0; i < size - 1; i++)
+
+	for (i = 0; i < size; i++)
+
+>>>>>>> 278eebbee81b1912df6524876f69fbe5e282e73f
 	{
 		for (j = 0; j < size - i - 1 ; j++)
 		{
@@ -23,6 +31,9 @@ void bubble_sort(int *array, size_t size)
 				print_array(array, size);
 			}
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 278eebbee81b1912df6524876f69fbe5e282e73f
 	}
 }
