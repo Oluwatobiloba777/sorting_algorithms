@@ -9,32 +9,30 @@
   */
 void selection_sort(int *array, size_t size)
 {
-	size_t i = 0, j = 1, aux = 0, min = 0, limit = size - 1;
+	size_t i, j, k;
+	int l;
 
-	if (size < 2)
-		return;
-
-	while (i < limit)
+	if (array == NULL || size < 2)
 	{
-		if (j == size)
+		return;
+	}
+
+	for (i = 0 ; i < size - 1 ; i++)
+	{
+		k = i;
+		for (j = i + 1; j < size; j++)
 		{
-			if (i != min)
+			if (array[j] < array[k])
 			{
-				aux = array[i];
-				array[i] = array[min];
-				array[min] = aux;
-				print_array(array, size);
+				k = j;
 			}
-
-			++i;
-			min = i;
-			j = i + 1;
-			continue;
 		}
-
-		if (array[min] > array[j])
-			min = j;
-
-		++j;
+		if (i != k)
+		{
+			l = array[i];
+			array[i] = array[k];
+			array[k] = l;
+			print_array(array, size);
+		}
 	}
 }
