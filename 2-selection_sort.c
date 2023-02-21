@@ -1,11 +1,11 @@
 #include "sort.h"
 
 /**
-  * selection_sort -the selection sort algorithm
-  * @array:array pointer
-  * @size:size of the list
+  * selection_sort - the selection sort algorithm
+  * @array: array pointer
+  * @size: size of the list
   *
-  * Return:it returns null
+  * Return: it returns null
   */
 void selection_sort(int *array, size_t size)
 {
