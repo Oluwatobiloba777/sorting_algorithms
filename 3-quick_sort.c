@@ -1,42 +1,36 @@
 #include "sort.h"
 
 /**
-  * quick_sort -the quick sort algorithm
-  * @array:array pointer
-  * @size:size of array
-  *
-  * Return: Null
-  */
+ * quick_sort -the quick sort algorithm
+ * @array: pointer to the array
+ * @size: the size
+ */
 void quick_sort(int *array, size_t size)
 {
-	if (!array || size < 2)
-		return;
-
-	quick_sort_rec(array, 0, size - 1, size);
+	quicksort(array, 0, size - 1, size);
 }
 
 /**
-  * quick_sort_rec - ...
-  * @array:array pointer
-  * @lower: int
-  * @higher: int
-  * @size:size of array
-  *
-  * Return: Null
-  */
-void quick_sort_rec(int *array, int lower, int higher, size_t size)
+ * quicksort - recursive sort function
+ * @array: pointer to the array
+ * @size: array size
+ * @hi: the hi
+ * @lo: the hish limit
+ */
+void quicksort(int *array, int hi, int lo, size_t size)
 {
-	int l_p = 0;
+	int piv;
 
-	if (lower < higher)
+	if (hi < lo)
 	{
-		l_p = lomuto_partition(array, lower, higher, size);
-		quick_sort_rec(array, lower, l_p - 1, size);
-		quick_sort_rec(array, l_p + 1, higher, size);
+		piv = partition(array, hi, lo, size);
+		quicksort(array, hi, piv - 1, size);
+		quicksort(array, piv + 1, lo, size);
 	}
 }
 
 /**
+<<<<<<< HEAD
   * lomuto_partition - lomuto partition scheme
   * @array:array pointer
   * @lower:int
@@ -46,33 +40,43 @@ void quick_sort_rec(int *array, int lower, int higher, size_t size)
   * Return: Null
   */
 int lomuto_partition(int *array, int lower, int higher, size_t size)
+=======
+ * partition - function tha creates a partition and order the array
+ * @array: the array
+ * @size: the size
+ * @hi: the hi limit
+ * @lo: the hish limit
+ * Return: return the pivot piv
+ */
+size_t partition(int *array, int hi, int lo, size_t size)
+>>>>>>> 60e18aecf7b0bbeded21de219c9b2e5f3e7399e8
 {
-	int i = 0, j = 0, pivot = 0, aux = 0;
+	int piv, i, j, k;
 
-	pivot = array[higher];
-	i = lower;
+	piv = array[lo];
 
-	for (j = lower; j < higher; ++j)
+	i = hi - 1;
+	for (j = hi; j < lo; j++)
 	{
-		if (array[j] < pivot)
+		if (array[j] <= piv)
 		{
-			aux = array[i];
-			array[i] = array[j];
-			array[j] = aux;
-
-			if (aux != array[i])
+			i++;
+			if (i != j)
+			{
+				k = array[i];
+				array[i] = array[j];
+				array[j] = k;
 				print_array(array, size);
-
-			++i;
+			}
 		}
 	}
-
-	aux = array[i];
-	array[i] = array[higher];
-	array[higher] = aux;
-
-	if (aux != array[i])
+	i++;
+	if (i != j)
+	{
+		k = array[i];
+		array[i] = array[lo];
+		array[lo] = k;
 		print_array(array, size);
-
+	}
 	return (i);
 }
