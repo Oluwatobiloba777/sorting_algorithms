@@ -38,7 +38,7 @@ void quick_sort_rec(int *array, int lower, int higher, size_t size)
 
 /**
   * lomuto_partition - lomuto partition scheme
-  * @array:array pointer 
+  * @array:array pointer
   * @lower:int
   * @higher:int
   * @size:size of the array
