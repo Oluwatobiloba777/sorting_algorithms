@@ -31,17 +31,6 @@ void quicksort(int *array, int hi, int lo, size_t size)
 }
 
 /**
-<<<<<<< HEAD
-  * lomuto_partition - lomuto partition scheme
-  * @array:array pointer
-  * @lower:int
-  * @higher:int
-  * @size:size of the array
-  *
-  * Return: Null
-  */
-int lomuto_partition(int *array, int lower, int higher, size_t size)
-=======
  * partition - function tha creates a partition and order the array
  * @array: the array
  * @size: the size
@@ -50,7 +39,6 @@ int lomuto_partition(int *array, int lower, int higher, size_t size)
  * Return: return the pivot piv
  */
 size_t partition(int *array, int hi, int lo, size_t size)
->>>>>>> 60e18aecf7b0bbeded21de219c9b2e5f3e7399e8
 {
 	int piv, i, j, k;
 
